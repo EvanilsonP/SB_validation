@@ -1,6 +1,12 @@
 package com.luv2code.validationdemo;
 
+import com.luv2code.validationdemo.validation.CourseCode;
 import jakarta.validation.constraints.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 
 public class Customer {
 
@@ -18,35 +24,6 @@ public class Customer {
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
     private String postalCode;
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Integer getFreePasses() {
-        return freePasses;
-    }
-
-    public void setFreePasses(Integer freePasses) {
-        this.freePasses = freePasses;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
+    @CourseCode
+    private String courseCode;
 }
